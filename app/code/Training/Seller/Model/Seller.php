@@ -74,6 +74,14 @@ class Seller extends AbstractModel implements SellerInterface, IdentityInterface
     /**
      * @inheritdoc
      */
+    public function getDescription()
+    {
+        return (string) $this->getData(self::FIELD_DESCRIPTION);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getCreatedAt()
     {
         return (string) $this->getData(self::FIELD_CREATED_AT);
@@ -114,6 +122,14 @@ class Seller extends AbstractModel implements SellerInterface, IdentityInterface
     /**
      * @inheritdoc
      */
+    public function setDescription($value)
+    {
+        return $this->setData(self::FIELD_DESCRIPTION, (string) $value);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function setCreatedAt($value)
     {
         return $this->setData(self::FIELD_CREATED_AT, (string) $value);
@@ -139,6 +155,9 @@ class Seller extends AbstractModel implements SellerInterface, IdentityInterface
     {
         $this->setIdentifier($values['identifier']);
         $this->setName($values['name']);
+        if (array_key_exists('description', $values)) {
+            $this->setDescription($values['description']);
+        }
 
         return $this;
     }
