@@ -35,4 +35,7 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="training-seller-product-plugin" type="\Training\Seller\Plugin\Model\Product"/>
+    </type>
 </config>
