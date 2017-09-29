@@ -38,4 +38,14 @@
     <type name="Magento\Catalog\Model\Product">
         <plugin name="training-seller-product-plugin" type="\Training\Seller\Plugin\Model\Product"/>
     </type>
+
+    <!-- Shell command -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="training_seller_get" xsi:type="object">Training\Seller\Console\Command\GetCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>
